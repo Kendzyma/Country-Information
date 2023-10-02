@@ -24,7 +24,6 @@ public class SwaggerConfig {
         return new OpenAPI() .info(new Info().title("Country Information")
                         .description("EndPoints to get Country info")
                         .version("v0.0.1") .license(new License().name("Apache 2.0").url("http://springdoc.org")))
-                // .servers(AnnotationsUtils.getServer())
                 .externalDocs(new ExternalDocumentation()
                         .description("Retrieves the top N most populated cities from Ghana, New Zealand, and Italy," +
                                 "Retrieves population, capital city, location, currency, ISO2&3 information for the specified country," +

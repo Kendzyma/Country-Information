@@ -11,18 +11,6 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class RestTemplateConfig {
-//    @Bean
-//    public RestTemplate restTemplate(){
-//        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-//        HttpClient httpClient = HttpClientBuilder.create()
-//                .setRedirectStrategy(new DefaultRedirectStrategy())
-//                .build();
-//        factory.setHttpClient(httpClient);
-//        RestTemplate restTemplate = new RestTemplate();
-//        restTemplate.setRequestFactory(factory);
-//
-//        return restTemplate;
-//    }
 @Bean
 public RestTemplate restTemplate() {
     return new RestTemplate(clientHttpRequestFactory());
@@ -31,7 +19,7 @@ public RestTemplate restTemplate() {
     @Bean
     public ClientHttpRequestFactory clientHttpRequestFactory() {
         CloseableHttpClient httpClient = HttpClients.custom()
-                .setRedirectStrategy(new LaxRedirectStrategy()) // Use LaxRedirectStrategy
+                .setRedirectStrategy(new LaxRedirectStrategy())
                 .build();
 
         return new HttpComponentsClientHttpRequestFactory(httpClient);
